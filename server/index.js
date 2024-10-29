@@ -8,4 +8,3 @@ const params = {
 };
 
 server.start(params);
-a;
