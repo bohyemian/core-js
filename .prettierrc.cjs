@@ -8,7 +8,7 @@ module.exports = {
   htmlWhitespaceSensitivity: 'css',
   bracketSameLine: false,
   bracketSpacing: true, // 객체 표기 괄호 사이 공백 추가 여부 (ex: { foo: bar })
-  printWidth: 80, // 행폭 설정 (줄 길이가 설정 값보다 길어지면 자동 개행)
+  printWidth: 200, // 행폭 설정 (줄 길이가 설정 값보다 길어지면 자동 개행)
   proseWrap: 'preserve', // 산문 래핑 설정
   quoteProps: 'as-needed', // 객체 속성 key 값에 인용 부호 사용 여부 (ex: { 'key': 'xkieo-xxxx' })
   semi: true, // 세미콜론(;) 사용 여부
