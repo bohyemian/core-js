@@ -105,7 +105,7 @@ function setCss(node, prop, value) {
   node.style[prop] = value;
 }
 
-setCss('.first', 'color', 'orange');
+setCss('.first','color','orange');
 
 /*
 1. function name
@@ -117,15 +117,18 @@ setCss('.first', 'color', 'orange');
 
 */
 
-// node의 값을 'h1'으로 받았을 경우
+
+// node의 값을 'h1'으로 받았을 경우 
 
 // node가 없거나 document.ELEMENT_NODE가 아닐 경우
 
 // prop의 값이 string이 아닐 경우
 
-// prop의 값이 style 속성이 아닐 경우
+// prop의 값이 style 속성이 아닐 경우 
 
-// value의 값이 number가 아닌 경우
+// value의 값이 number가 아닌 경우 
+
+
 
 // 클릭 이벤트를 이용한 h1의 폰트 크기를 증가시키는 함수와 감소시키는 함수 만들기
 
