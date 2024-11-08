@@ -5,12 +5,10 @@
 /* Primitives vs. Object --------- */
 
 const html = /* html */ `
-  
   <h1>title</h1>
   <div class="first">
     hello!
   </div>
-
 `;
 
 // key:value 쌍으로 구성된 엔티티(entity) 데이터 구조
@@ -186,7 +184,7 @@ const student = {
   name,
   email,
   authorization,
-  isLogin,
+  isLogin
 };
 
 // 프로퍼티 이름 제한
@@ -204,11 +202,11 @@ function isEmptyObject() {
 // 순서(order)를 바꿀 수 없음. 변수명 내맘대로
 const arr = [10, 100, 1000, 10_000];
 
+arr[4] = '안녕';
+
 // rest?
 // 기본값 설정
 const [a1, a2, a3, a4, a5 = 100_000] = arr;
-
-arr[4] = '안녕';
 
 // const a1 = arr[0];
 // const a2 = arr[1];
@@ -221,6 +219,61 @@ const [first, second] = document.querySelectorAll('span');
 console.log(first);
 console.log(second);
 
+for (const [k, v] of Object.entries(authUser)) {
+  console.log(k);
+  console.log(v);
+}
+
+Object.entries(authUser).forEach(([k, v]) => {
+  console.log(k);
+});
+
+Object.entries(authUser).map(([k, v]) => v);
+
+console.clear();
+
 /* -------------------------------------------- */
 /* 객체 구조 분해 할당  destructuring assignments    */
 /* --------------------------------------------- */
+
+const salaries = {
+  김미리: 800,
+  박혜미: 130,
+  이성우: 400,
+  명재휘: 80,
+};
+
+// 객체의 구조 분해 할당 : 순서가 상관 없음. 객체의 key와 변수의 이름이 동일해야 함. => 변수명 설정? 가능
+
+const { 박혜미: 박 = 100, 이성우: 이 = 200, 명재휘: 명 = 300, 김미리: 김 = 400 } = salaries;
+
+const { 박혜미, 이성우, ...나머지 } = salaries;
+
+function createUserObject({ name, age, address, ...rest } = {}) {
+  // 왜 분해 하나요?
+  // const {name,age,address,phone,job} = obj;
+
+  return { name, age, address };
+}
+
+const data = {
+  name: '심선범',
+  age: 35,
+  address: '중랑구',
+  phone: '010-7169-0262',
+  job: '강사',
+};
+
+const _data = {
+  이름: '심선범',
+  나이: 35,
+  주소: '중랑구',
+  전화번호: '010-7169-0262',
+  직업: '강사',
+};
+
+const user = createUserObject(data);
+
+const { log: g } = console;
+
+g('안녕');
