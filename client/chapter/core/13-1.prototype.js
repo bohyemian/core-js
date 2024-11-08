@@ -61,8 +61,6 @@ function Animal() {
   };
 }
 
-// const a = new Animal();
-
 function Tiger(name) {
   Animal.call(this);
 
@@ -74,9 +72,15 @@ function Tiger(name) {
   };
 }
 
-// Tiger.prototype = a;
+// const 금강산호랑이 = new Tiger('금순이');
+// Tiger.prototype = new Animal();
+// const 아차산호랑이 = new Tiger('아차산호랑이');
 
-const 금강산호랑이 = new Tiger('금순이');
+// console.dir(금강산호랑이);
+// console.dir(아차산호랑이);
+// console.dir(Animal);
+// console.dir(Tiger);
+// console.log(금강산호랑이.tail, 아차산호랑이.tail);
 
 // call  -> 함수를 대신 실행시켜줌 -> 빌려쓰기
 // apply
