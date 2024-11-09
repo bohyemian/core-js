@@ -19,7 +19,10 @@ const animal = {
   },
   set eat(food) {
     // setter
-    this.stomach = [];
+    if (!this.stomach) {
+      this.stomach = [];
+    }
+
     this.stomach.push(food);
   },
 };
@@ -27,8 +30,7 @@ const animal = {
 const tiger = {
   pattern: '호랑이 무늬',
   hunt(target) {
-    this.prey = target;
-    this.eat = this.prey;
+    this.eat = this.prey = target;
     return `${target}에게 조용히 접근한다.`;
   },
   __proto__: animal,
@@ -46,6 +48,10 @@ const 한라산호랑이 = {
   __proto__: tiger,
 };
 
+백두산호랑이.hunt('고구마'); //tiget를 상속받아 30번 줄에서 setter this.eat 메서드 실행
+백두산호랑이.hunt('감자');
+console.log(백두산호랑이.eat); //tiget를 상속받아 getter this.eat 메서드 실행
+
 /* object constructor function */
 // 생성자 함수
 
@@ -62,7 +68,7 @@ function Animal() {
 }
 
 function Tiger(name) {
-  Animal.call(this);
+  // Animal.call(this); //✨생성자 함수를 실행하면 객체(인스턴스)를 반환한다.
 
   this.name = name;
   this.pattern = '호랑이무늬';
@@ -72,15 +78,15 @@ function Tiger(name) {
   };
 }
 
-// const 금강산호랑이 = new Tiger('금순이');
-// Tiger.prototype = new Animal();
-// const 아차산호랑이 = new Tiger('아차산호랑이');
+const 금강산호랑이 = new Tiger('금순이');
+Tiger.prototype = new Animal();
+const 아차산호랑이 = new Tiger('아차산호랑이');
 
 // console.dir(금강산호랑이);
 // console.dir(아차산호랑이);
 // console.dir(Animal);
 // console.dir(Tiger);
-// console.log(금강산호랑이.tail, 아차산호랑이.tail);
+// console.log(금강산호랑이.legs, 아차산호랑이.legs);
 
 // call  -> 함수를 대신 실행시켜줌 -> 빌려쓰기
 // apply
