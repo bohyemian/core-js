@@ -19,10 +19,7 @@ const animal = {
   },
   set eat(food) {
     // setter
-    if (!this.stomach) {
-      this.stomach = [];
-    }
-
+    this.stomach ??= [];
     this.stomach.push(food);
   },
 };
@@ -62,7 +59,7 @@ function Animal() {
     return this.stomach ?? [];
   };
   this.setEat = function (food) {
-    this.stomach = [];
+    this.stomach ??= [];
     this.stomach.push(food);
   };
 }
@@ -82,11 +79,14 @@ const 금강산호랑이 = new Tiger('금순이');
 Tiger.prototype = new Animal();
 const 아차산호랑이 = new Tiger('아차산호랑이');
 
-// console.dir(금강산호랑이);
-// console.dir(아차산호랑이);
-// console.dir(Animal);
-// console.dir(Tiger);
-// console.log(금강산호랑이.legs, 아차산호랑이.legs);
+console.dir(금강산호랑이);
+console.dir(아차산호랑이);
+
+아차산호랑이.setEat('피자🍕');
+console.log(아차산호랑이.getEat()); //array
+console.log(금강산호랑이.legs, 아차산호랑이.legs);
+console.dir(Animal);
+console.dir(Tiger);
 
 // call  -> 함수를 대신 실행시켜줌 -> 빌려쓰기
 // apply
