@@ -65,7 +65,7 @@ function Animal() {
 }
 
 function Tiger(name) {
-  // Animal.call(this); //✨생성자 함수를 실행하면 객체(인스턴스)를 반환한다.
+  // Animal.call(this); //✨생성자 함수를 일반함수처럼 실행. 상속받는 생성자 함수를 this로 바인딩해서 프로퍼티를 생성한다.
 
   this.name = name;
   this.pattern = '호랑이무늬';
