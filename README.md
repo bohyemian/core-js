@@ -47,7 +47,7 @@
 
 ## Object
 
-- [x] object (객체) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/12-1.object.js)
+- [x] object (객체 | 구조분해할당) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/12-1.object.js)
 - [x] object (copy by reference) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/12-2.object.js)
 - [x] object (garbage collection) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/12-3.object.js)
 - [x] object (method and this) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/12-4.object.js)
