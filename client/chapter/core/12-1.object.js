@@ -2,7 +2,7 @@
 /* Object    */
 /* --------- */
 
-/* Primitives vs. Object --------- */
+/* Primitives(원시값) vs. Object --------- */
 
 const html = /* html */ `
   <h1>title</h1>
@@ -184,7 +184,7 @@ const student = {
   name,
   email,
   authorization,
-  isLogin
+  isLogin,
 };
 
 // 프로퍼티 이름 제한
@@ -230,8 +230,6 @@ Object.entries(authUser).forEach(([k, v]) => {
 
 Object.entries(authUser).map(([k, v]) => v);
 
-console.clear();
-
 /* -------------------------------------------- */
 /* 객체 구조 분해 할당  destructuring assignments    */
 /* --------------------------------------------- */
@@ -249,11 +247,11 @@ const { 박혜미: 박 = 100, 이성우: 이 = 200, 명재휘: 명 = 300, 김미
 
 const { 박혜미, 이성우, ...나머지 } = salaries;
 
-function createUserObject({ name, age, address, ...rest } = {}) {
+function createUserObject({ name, age, address, ...etc } = {}) {
   // 왜 분해 하나요?
   // const {name,age,address,phone,job} = obj;
 
-  return { name, age, address };
+  return { name, age, address, etc };
 }
 
 const data = {
