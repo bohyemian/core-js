@@ -88,6 +88,10 @@ console.log(금강산호랑이.legs, 아차산호랑이.legs);
 console.dir(Animal);
 console.dir(Tiger);
 
+Tiger.bark = function (sound) {
+  return sound;
+};
+
 // call  -> 함수를 대신 실행시켜줌 -> 빌려쓰기
 // apply
 // bind
@@ -99,3 +103,31 @@ console.dir(Tiger);
 // Object.prototype.hasOwnProperty.call(obj,key)
 
 // sum.call('안녕!',10,20)
+
+/* debounce, throttle */
+
+/* function instance method  */
+
+// call  -> 함수를 대신 실행시켜줌 -> 빌려쓰기 -> 인수 : 값
+// apply -> 함수를 대신 실행시켜줌 -> 빌려쓰기 -> 인수 : 배열
+
+// bind  -> 함수를 대신 실행 X -> 빌려쓰기
+
+// this를 강제하기 위해
+
+function sum(a, b) {
+  console.log(this);
+  return a + b;
+}
+
+// Object.prototype.hasOwnProperty.call(obj,key)
+
+const _sum = sum.bind('안녕!', 10, 20);
+
+function handleClick() {
+  console.log('clicked!');
+}
+
+const handleBindClick = handleClick.call('hello');
+
+document.querySelector('.first').addEventListener('click', handleBindClick);
