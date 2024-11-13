@@ -109,19 +109,20 @@ class Button {
     document.body.insertAdjacentHTML('beforeend', this.createTag());
   }
 
-  handleClick() {
+  handleClick(e) {
+    e.preventDefault();
     this.#render();
   }
 
   attachEvent() {
     this.button.addEventListener('click', this.handleClick.bind(this));
-    // this.button.addEventListener('click', () => this.handleClick());
+    // this.button.addEventListener('click', (e) => this.handleClick());
   }
 }
 
 const button = new Button('.btn');
 
-const button2 = new Button('.btn2');
+// const button2 = new Button('.btn2');
 
 // const _button = document.querySelector('.btn');
 
