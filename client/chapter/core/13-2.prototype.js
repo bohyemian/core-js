@@ -78,7 +78,7 @@ const 호랑이 = new Tiger('호돌이');
 //   }
 // }
 
-/* 
+/*
 1. 버튼 선택
 2. 클릭 이벤트
 3. 태그 만들기
@@ -114,7 +114,8 @@ class Button {
   }
 
   attachEvent() {
-    this.button.addEventListener('click', () => this.handleClick());
+    this.button.addEventListener('click', this.handleClick.bind(this));
+    // this.button.addEventListener('click', () => this.handleClick());
   }
 }
 
