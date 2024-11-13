@@ -220,8 +220,8 @@ const _reduce = (f, acc, i) => {
   if (!i) {
     // i = acc;
     // acc = i.shift();
-    i = acc[Symbol.iterator]();
-    acc = i.next().value;
+    i = acc[Symbol.iterator](); //i에 배열의 iterator 객체가 할당됨
+    acc = i.next().value; // i.next()가 한번 실행되서 i에는 i.shift()을 실행한 것처럼 첫번째 순회요소가 제외된 상태
   }
 
   for (const a of i) {
@@ -237,10 +237,10 @@ const add = (a, b) => a + b;
 
 console.log(
   _reduce(
-    add,
-    _map(
+    add, //1️⃣콜스택에 제일 먼저 들어감
+    _map( // 2️⃣ 콜스택 reduce 위에 쌓임
       (p) => p.price,
-      _filter((p) => p.price < 20000, products)
+      _filter((p) => p.price < 20000, products) // 3️⃣ _filter의 return 배열이 _map에 전달됨
     )
   )
 );
