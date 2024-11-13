@@ -236,8 +236,8 @@ const t = _reduce((acc, cur) => acc + cur.price, products);
 const add = (a, b) => a + b;
 
 console.log(
-  _reduce(
-    add, //1️⃣콜스택에 제일 먼저 들어감
+  _reduce( //1️⃣콜스택에 제일 먼저 들어감
+    add,
     _map( // 2️⃣ 콜스택 reduce 위에 쌓임
       (p) => p.price,
       _filter((p) => p.price < 20000, products) // 3️⃣ _filter의 return 배열이 _map에 전달됨
