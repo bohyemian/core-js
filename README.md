@@ -71,32 +71,33 @@
 
 ## OptionalChaining & wrapper
 
-- [ ] OptionalChaining(옵셔널체이닝) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/15.Optional.js)
-- [ ] Wrapper(wrapper object) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/16.wrapper.js)
+- [x] OptionalChaining(옵셔널체이닝) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/15.Optional.js)
+- [x] Wrapper(wrapper object) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/16.wrapper.js)
 
 ---
 
 ## Number
 
-- [ ] Number(number Type) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/17.number.js)
+- [x] Number(number Type) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/17-1.number.js)
+- [x] Number(Math Object) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/17-2.number.js)
 
 ---
 
 ## String
 
-- [ ] String(string Type) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/18.string.js)
+- [x] String(string Type) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/18.string.js)
 
 ---
 
 ## Array
 
-- [ ] Array(array Type) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/19.array.js)
-- [ ] ArrayMethod(array Method) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/20.arrayMethod.js)
+- [x] Array(array Type) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/19.array.js)
+- [x] ArrayMethod(array Method) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/20.arrayMethod.js)
 
 ## iterator protocol
 
-- [ ] iterator(iterator object) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/21.iterator.js)
+- [x] iterator(iterator object) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/21.iterator.js)
 
 ## 예외처리
 
-- [ ] Try..catch(예외처리) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/22.tryCatch.js)
+- [x] Try..catch(예외처리) [바로가기](https://github.com/bohyemian/core-js/blob/01.core/client/chapter/core/22.tryCatch.js)

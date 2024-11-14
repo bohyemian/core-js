@@ -7,23 +7,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./style.css" />
   <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
-  <script src="./utils/type.js" defer></script>
+  <script src="./chapter/dom/gsap.js" defer></script>
+  <script src="./lib/error/typeError.js" defer></script>
+  <script src="./lib/utils/type.js" defer></script>
+  <script src="./lib/dom/getNode.js" defer></script>
+  <script src="./lib/dom/attr.js" defer></script>
   <script src="./chapter/core/22.tryCatch.js" defer></script>
 </head>
 
 <body>
   <h1>
-    <span class="first">core</span>
-    <span class="second">javascript</span>
-    <button type="button">CTA</button>
+    <span class="first">코어</span>
+    <span class="second">자바스크립트</span>
   </h1>
-  <ul></ul>
 
-  <!-- <div class="space">
-      <div class="dot"></div>
-      <div class="circle"></div>
-    </div>
-    -->
+  <video src="" id="videoElement" autoplay></video>
+
+  <nav>
+    <ul>
+      <li class="about" data-name="about">
+        😉
+        <span>agout</span>
+      </li>
+      <li class="home" data-name="home">
+        🏠
+        <span>home</span>
+      </li>
+      <li class="contact" data-name="contact">
+        📞
+        <span>contact</span>
+      </li>
+    </ul>
+  </nav>
 </body>
 
 </html>
