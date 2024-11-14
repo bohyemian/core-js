@@ -1,3 +1,25 @@
+@font-face {
+  font-family: 'ChosunCentennial';
+  src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ChosunGu';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A;
+}
+
+* {
+  font-family: 'ChosunGu', 'ChosunCentennial';
+}
+
+body {
+  color: #222;
+}
+
 h1 {
   position: absolute;
   left: 50%;
@@ -6,7 +28,9 @@ h1 {
 }
 
 .first {
-  background-color: dodgerblue;
+  padding: 0.25rem;
+  background-color: #23b16c;
+  color: #fff;
 }
 
 .second {
@@ -42,4 +66,9 @@ body {
   & div {
     position: absolute;
   }
+}
+
+ul,
+li {
+  list-style: none;
 }

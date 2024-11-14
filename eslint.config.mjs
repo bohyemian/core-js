@@ -5,6 +5,13 @@ const types = {
   typeOf: true,
   isType: true,
 };
+const dom = {
+  getNode: true,
+  getAttr: true,
+};
+const error = {
+  typeError: true,
+};
 
 export default [
   pluginJs.configs.recommended,
@@ -14,6 +21,8 @@ export default [
         ...globals.browser,
         ...globals.node,
         ...types,
+        ...dom,
+        ...error,
       },
     },
     rules: {
