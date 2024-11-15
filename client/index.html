@@ -5,25 +5,43 @@
   <title>범쌤과 함께 배우는 core javascript</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./style.css" />
   <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
-  <script src="./utils/type.js" defer></script>
-  <script src="./chapter/dom/04.attribute.js" defer></script>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./chapter/dom/gsap.js"></script>
+  <script src="./lib/error/typeError.js" defer></script>
+  <script src="./lib/error/syntaxError.js" defer></script>
+  <script src="./lib/error/refError.js" defer></script>
+  <script src="./lib/utils/type.js" defer></script>
+  <script src="./lib/dom/getNode.js" defer></script>
+  <script src="./lib/dom/css.js" defer></script>
+  <script src="./lib/dom/insert.js" defer></script>
+  <script src="./lib/dom/attr.js" defer></script>
+  <script src="./chapter/dom/06.style.js" defer></script>
 </head>
 
 <body>
-  <h1>
-    <span class="first">core</span>
-    <span class="second">javascript</span>
-    <button type="button">CTA</button>
-  </h1>
-  <ul></ul>
+  <nav>
+    <ul>
+      <li class="about" data-name="about">
+        😉
+        <span>ABOUT</span>
+      </li>
+      <li class="home" data-name="home">
+        🏠
+        <span>HOME</span>
+      </li>
+      <li class="contact" data-name="contact">
+        📞
+        <span>CONTACT</span>
+      </li>
+    </ul>
+  </nav>
 
-  <!-- <div class="space">
-      <div class="dot"></div>
-      <div class="circle"></div>
-    </div>
-    -->
+  <h1>
+    <span class="first">코어</span>
+    <span class="second">자바스크립트</span>
+    <!-- <button type="button">CTA</button> -->
+  </h1>
 </body>
 
 </html>

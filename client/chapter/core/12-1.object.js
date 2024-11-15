@@ -143,7 +143,7 @@ console.clear();
 //    비워두기        메모리 날림
 
 function removeProperty(obj, key) {
-  if (isType(obj)) {
+  if (isObject(obj)) {
     obj[key] = null;
   }
 }
@@ -152,7 +152,7 @@ removeProperty(authUser, 'uuid');
 authUser.uuid = null;
 
 function deleteProperty(obj, key) {
-  if (isType(obj)) {
+  if (isObject(obj)) {
     delete obj[key];
   }
 }
