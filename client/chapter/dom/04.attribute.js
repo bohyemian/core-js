@@ -50,6 +50,12 @@ about.dataset.value = 100;
 // console.log( about.getAttribute('data-value') );
 console.log(about.dataset.value);
 
+// JavaScript Object Notation
+
+// JSON
+
+setAttr('.about', 'data-name', '안녕');
+
 /* 비표준 속성, 프로퍼티 설정 ------------------------------------------------- */
 
 // data-* 속성은 커스텀 데이터를 안전하고 유효하게 전달해줍니다.

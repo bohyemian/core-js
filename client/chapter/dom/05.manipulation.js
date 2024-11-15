@@ -10,10 +10,11 @@
 
 const li = document.createElement('li');
 
-console.log(li);
 li.className = 'portfolio';
-li.textContent = '🍀' + li.className.toLocaleUpperCase();
+li.textContent = '🐯 ' + li.className.toUpperCase();
 li.dataset.name = li.className;
+
+console.log(li);
 
 getNode('ul').append(li);
 
@@ -40,8 +41,15 @@ getNode('ul').append(li);
 // - insertAdjacentText
 
 const ul = getNode('ul');
-const template = `<li class="admin" data-name="admin">🐒 <span>ADMIN</span></li>`;
-// ul.insertAdjacentHTML('beforeend', template);
+
+const template = `
+  <li class="admin" data-name="admin">
+    👹
+    <span>ADMIN</span>
+  </li>
+`;
+
+ul.insertAdjacentHTML('afterend', template);
 
 insertLast(ul, template);
 
