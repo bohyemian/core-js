@@ -20,11 +20,11 @@ const nav = getNode('nav');
 // console.log( nav.classList.contains('navigation') );
 // nav.classList.toggle('is-active')
 
-// addClass(nav, ['a, b']); //안됨
-// addClass(nav, 'a-1, b-1');
-// addClass(nav, ['a-2', 'b-2']);
-// addClass(nav, ['a-3']);
-// addClass(nav, 'a-4');
+addClass(nav, ['a, b']);
+addClass(nav, 'a-1, b-1');
+addClass(nav, ['a-2', 'b-2']);
+addClass(nav, ['a-3']);
+addClass(nav, 'a-4');
 
 /* 스타일 변경 방법 --------------------------------------------------------- */
 

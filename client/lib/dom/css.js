@@ -15,17 +15,22 @@ function addClass(node, ...className) {
   if (isString(node)) node = getNode(node);
 
   className.forEach((c) => {
-    if (isObject(c)) c = Object.values(c);
-
     if (c.includes(',')) {
       c = c.replace(/\s*/g, '').split(',');
     }
 
+    if (isObject(c)) c = Object.values(c);
+
     if (isArray(c)) {
-      c.forEach((c) => node.classList.add(c));
-    } else {
-      node.classList.add(c);
+      c.forEach((c) => {
+        if (c.includes(',')) addClass(node, c);
+        else node.classList.add(c);
+      });
+
+      return;
     }
+
+    node.classList.add(c);
   });
 }
 
