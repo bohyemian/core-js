@@ -53,18 +53,41 @@ function handleMove({ offsetX: x, offsetY: y }) {
   insertLast(ground, template);
 }
 
-ground.addEventListener('mousemove', handleMove);
+window.addEventListener('resize', () => {
+  console.log('값 계산중...'); // 1s
+});
 
-// debounce
+// debounce :: 일정 시간 동안 발생한 이벤트 중 마지막만 실행
+function debounce(callback, limit = 500) {
+  let timeout;
 
-const input = getNode('input');
+  return function (e) {
+    clearTimeout(timeout);
 
-function handleInput() {
-  if (this.value === 'seonbeom@gmail.com') {
-  }
+    timeout = setTimeout(() => {
+      callback.call(this, e);
+    }, limit);
+  };
 }
 
-input.addEventListener('input', handleInput);
+function handle(e) {
+  console.log(e);
+}
+
+ground.addEventListener('mousemove', throttle(handle, 1000));
+
+// throttle :: 특정 시간에 한번만 실행
+function throttle(callback, limit = 500) {
+  let wait = false;
+
+  return function (...args) {
+    if (!wait) {
+      callback.apply(this, args);
+      wait = true;
+      setTimeout(() => (wait = false), limit);
+    }
+  };
+}
 
 /* 이벤트 추가/제거 --------------------------------------------------------- */
 
