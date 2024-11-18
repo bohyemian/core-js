@@ -109,3 +109,18 @@ nav {
   position: absolute;
   pointer-events: none;
 }
+
+section {
+  padding: 2rem;
+  background: dodgerblue;
+
+  article {
+    padding: inherit;
+    background: hotpink;
+
+    p {
+      padding: inherit;
+      background: orange;
+    }
+  }
+}
