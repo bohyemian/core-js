@@ -1,126 +1,82 @@
-@font-face {
-  font-family: 'ChosunCentennial';
-  src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'ChosunGu';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  unicode-range: U+0041-005A, U+0061-007A;
-}
-
-* {
-  font-family: 'ChosunGu', 'ChosunCentennial';
-}
-
 body {
-  color: #222;
+  background: #f6f6f6;
 }
 
-h1 {
+.calculator {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}
-
-.first {
-  padding: 0.25rem;
-  background-color: #23b16c;
-  color: #fff;
-}
-
-.second {
-  display: inline-block;
-}
-
-body {
-  overflow: hidden;
-}
-
-.space {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  .dot {
-    width: 10px;
-    height: 10px;
-    background-color: red;
-    border-radius: 50%;
-  }
-
-  .circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: dodgerblue;
-    position: absolute;
-  }
-
-  & div {
-    position: absolute;
-  }
 }
 
-nav {
-  transition: transform 1s;
+.calculator > div {
+  position: relative;
 }
 
-.is-active {
-  transform: translateY(100px) rotate(360deg);
+input[type='number'] {
+  max-width: 10rem;
+  font-size: 2rem;
+  padding: 0.5rem;
+  background: transparent;
+  border-radius: 0.3rem;
+  border: 1px solid gray;
+  color: rgb(83, 83, 83);
+  text-align: center;
 }
 
-.about {
-  transition: all 1s;
+.operator {
+  font-size: 1.5rem;
+  margin: 0 1rem;
 }
 
-.about:hover {
-  background-color: dodgerblue;
+input[type='submit'] {
+  padding: 1rem;
+  font-size: 1rem;
+  margin-left: 2rem;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  border: none;
+  color: white;
+  font-weight: bold;
+  transition: background 0.2s;
+  background: #5e44f6;
 }
 
-.ground {
-  width: 400px;
-  height: 300px;
-  border: 5px solid black;
-  position: absolute;
+input[type='submit']:hover,
+input[type='submit']:focus {
+  background: #2c10c9;
+}
+
+.result {
+  font-size: 3rem;
+  font-weight: bold;
+  position: absolute !important;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgb(70, 167, 70);
-  cursor: none;
-  overflow: hidden;
+  transform: translateX(-50%);
+  bottom: -10rem;
+  color: #f53277;
 }
 
-.ball {
-  /* transition:all 1s; */
-  display: inline-block;
-  pointer-events: none;
-}
-
-.emotion {
-  font-size: 0.2rem;
+.calculator label {
   position: absolute;
-  pointer-events: none;
+  left: 21px;
+  top: -6px;
+  padding: 0 0.5rem;
+  background: #f6f6f6;
 }
 
-section {
-  padding: 2rem;
-  background: dodgerblue;
-
-  article {
-    padding: inherit;
-    background: hotpink;
-
-    p {
-      padding: inherit;
-      background: orange;
-    }
+@media screen and (max-width: 600px) {
+  .calculator {
+    flex-direction: column;
+  }
+  input[type='submit'] {
+    width: 100%;
+    margin: 30px 0 0 0;
+  }
+  .operator {
+    margin: 1rem 0;
   }
 }

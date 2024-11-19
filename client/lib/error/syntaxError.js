@@ -1,3 +1,7 @@
-function syntaxError(message) {
-  return new syntaxError(message);
+
+
+
+export function syntaxError(message) {
+  return new SyntaxError(message)
 }
+
