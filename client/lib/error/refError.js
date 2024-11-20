@@ -1,5 +1,3 @@
-
-
-export function refError(message){
-  return new ReferenceError(message)
+export function refError(message) {
+  return new ReferenceError(message);
 }

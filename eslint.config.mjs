@@ -40,6 +40,7 @@ export default [
         ...types,
         ...dom,
         ...error,
+        gsap: true,
       },
     },
     rules: {
