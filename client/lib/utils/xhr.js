@@ -145,14 +145,14 @@ function xhrPromise(options = {}) {
     });
   }
 
-  xhr.send(body ? JSON.stringify(body) : null);
+  xhr.send(body ? JSON.stringify(body) : null); //문자열로 전송하기 위해 JSON.stringify로 body를 감싸 보낸다. //https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
 
   return new Promise((resolve, reject) => {
     xhr.addEventListener('readystatechange', () => {
       if (xhr.readyState === 4) {
         // complete
         if (xhr.status >= 200 && xhr.status < 400) {
-          resolve(JSON.parse(xhr.response));
+          resolve(JSON.parse(xhr.response)); //통신 요청한 결과값은 문자열이기 때문에 JSON.parse로 구문 분석, 객체로 만든다. https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
         } else {
           reject({ message: '데이터 통신이 원활하지 않습니다.' });
         }
