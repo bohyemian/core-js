@@ -20,6 +20,7 @@ export const bono = async (options) => {
   return response;
 };
 
+// 컴파운드 컴포넌트
 bono.get = (url, options) => bono({ url, ...options });
 bono.post = (url, body, options) =>
   bono({
