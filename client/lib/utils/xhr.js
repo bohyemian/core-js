@@ -125,7 +125,7 @@ const defaultOptions = {
   },
 };
 
-function xhrPromise(options = {}) {
+export function xhrPromise(options = {}) {
   const { method, url, errorMessage, body, headers } = {
     ...defaultOptions,
     ...options,
