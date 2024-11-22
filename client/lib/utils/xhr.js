@@ -188,7 +188,7 @@ xhrPromise
       <div>site : ${website}</div>
     `;
 
-        document.body.insertAdjacentHTML('beforeend', tag);
+        // document.body.insertAdjacentHTML('beforeend', tag);
       });
     },
     (err) => {

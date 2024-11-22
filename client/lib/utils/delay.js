@@ -50,7 +50,7 @@ const defaultOptions = {
   timeout: 1000,
 };
 
-function delayP(options) {
+export function delayP(options) {
   let config = { ...defaultOptions };
 
   if (isNumber(options)) {
@@ -182,18 +182,10 @@ async function 라면끓이기() {
 
 // 라면끓이기();
 
-function getData() {
-  xhrPromise.get(`https://pokeapi.co/api/v2/pokemon/${Math.round(Math.random() * 100)}`).then((res) => {
-    insertLast(document.body, `<img src="${res.sprites.other.showdown['front_default']}" alt="" />`);
-  });
-}
-
-// getData();
-
-async function asyncGetData() {
+async function getData() {
   const res = await xhrPromise.get(`https://pokeapi.co/api/v2/pokemon/${Math.round(Math.random() * 100)}`);
 
   insertLast(document.body, `<img src="${res.sprites.other.showdown['front_default']}" alt="" />`);
 }
 
-asyncGetData();
+// getData();
