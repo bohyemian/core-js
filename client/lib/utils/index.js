@@ -4,3 +4,4 @@ export * from './memo.js';
 export * from './xhr.js';
 export * from './delay.js';
 export * from './bono.js';
+export * from './storage.js';

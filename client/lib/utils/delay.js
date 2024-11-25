@@ -38,7 +38,7 @@ const p = new Promise((성공, 실패) => {
 });
 
 p.then((res) => {
-  console.log(res);
+  // console.log(res);
 });
 
 // promise 객체를 반환하는 함수 => 재사용
@@ -87,34 +87,34 @@ export function delayP(options) {
 // .then().then() 으로 체이닝 가능한 이유는 then이 프로미스 객체를 반환하기 때문. ✨
 delayP({ data: '성공✨' })
   .then((res) => {
-    console.log(res);
+    // console.log(res);
     first.style.top = '-100px';
     second.style.top = '100px';
     return delayP({ data: 'then 1' });
   })
   .then((res) => {
-    console.log(res);
+    // console.log(res);
     first.style.transform = 'rotate(360deg)';
     second.style.transform = 'rotate(-360deg)';
     return delayP({ data: 'then 2' });
   })
   .then((res) => {
-    console.log(res);
+    // console.log(res);
     first.style.top = '0px';
     second.style.top = '0px';
     return delayP({ data: 'complete! ✨' });
   })
   .then((res) => {
-    console.log(res);
+    // console.log(res);
   });
 
 async function d() {
-  return 'function d';
+  // return 'function d';
 }
 
 const _d = d();
 
-_d.then(console.log);
+// _d.then(console.log);
 
 async function delayA() {
   const p = new Promise((resolve) => {
@@ -129,7 +129,7 @@ async function delayA() {
   return result;
 }
 
-console.log(delayA());
+// console.log(delayA());
 
 // async 함수는 무.조.건. Promise Object를 반환
 // await 2가지 기능 수행

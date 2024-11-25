@@ -57,7 +57,7 @@ xhr({
   method: 'DELETE',
   url: END_POINT + '/1',
   success: (data) => {
-    console.log(data);
+    // console.log(data);
   },
   fail: (err) => {
     console.log(err);
@@ -181,7 +181,7 @@ xhrPromise
   .get(END_POINT)
   .then(
     (res) => {
-      console.log(res);
+      // console.log(res);
 
       res.forEach(({ website }) => {
         const tag = `
