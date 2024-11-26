@@ -2,26 +2,32 @@
 <html lang="ko-KR">
 
 <head>
-  <title>범쌤과 함께 배우는 core javascript</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="./main.js" type="module"></script>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="./js/main.js" type="module"></script>
+  <title>ToDoList</title>
 </head>
 
 <body>
-  <h1>
-    <span class="first">🎈</span>
-    <span class="second">🐬</span>
-  </h1>
-
-  <div class="container">
-    <label for="textField"></label>
-    <textarea name="someText" id="textField" cols="30" rows="10"></textarea>
-    <button type="button" data-name="clear">clear</button>
-  </div>
+  <section class="container">
+    <div class="heading">
+      <img class="heading__img" src="./assets/laptop.svg" alt="노트북">
+      <h1 class="heading__title">To-Do List</h1>
+    </div>
+    <form class="form">
+      <div>
+        <label class="form__label" for="todo">~ Today I need to ~</label>
+        <input class="form__input" type="text" id="todo" name="to-do" size="30" required>
+        <button class="button" type="submit"><span>Submit</span></button>
+      </div>
+    </form>
+    <div>
+      <ul class="toDoList">
+      </ul>
+    </div>
+  </section>
 </body>
 
 </html>

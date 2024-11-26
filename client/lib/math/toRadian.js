@@ -1,3 +1,8 @@
-export function toRadian(d) {
-  return (d * Math.PI) / 180;
+
+
+
+
+
+export function toRadian(d){
+  return d * Math.PI / 180
 }

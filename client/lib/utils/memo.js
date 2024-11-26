@@ -1,23 +1,32 @@
+
+
+
+
+
 export const memo = (() => {
+
   const cache = {};
+  
+  return (key,callback) => {
+    if(!callback) return cache[key]
 
-  return (key, callback) => {
-    if (!callback) return cache[key]; //getter
-
-    if (cache[key]) {
+    if(cache[key]){
+      
       console.warn(`${key} 안에는 이미 캐시된 값이 존재합니다.`);
-
-      if (confirm('덮어쓰기 할거여?')) {
+      
+      if(confirm('덮어쓰기 하실겁니까..?')){
         const history = cache[key];
-        const current = (cache[key] = callback());
+        cache[key] = callback()    
+        const current = cache[key];
+        console.warn(`${history} -> ${current}`);
       }
-
+  
       return cache[key];
     }
+    cache[key] = callback()
+  }
+})()
 
-    cache[key] = callback();
-  };
-})();
 
 // memo('cube', () => document.querySelector('#cube')); // set
 // memo('cube', () => document.querySelector('tbody')); // set
@@ -25,4 +34,12 @@ export const memo = (() => {
 // memo('say', () => 'bye'); // set
 // console.log( memo('cube') );
 
-// <div id="cube"></div>  get
+
+ // <div id="cube"></div>  get
+
+
+
+
+
+
+

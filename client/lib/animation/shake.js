@@ -1,12 +1,14 @@
-export function shake(t) {
-  return gsap.fromTo(
-    t,
-    { x: -10 },
+
+
+export function shake(t){
+  const animation = gsap.fromTo(t,
+    { x:-10, },
     {
-      duration: 0.1,
-      x: 0,
-      repeat: 5,
-      yoyo: true,
-    }
-  );
+    duration:0.1,
+    x:0,
+    repeat:5,
+    yoyo:true,
+  })
+
+  return animation
 }
