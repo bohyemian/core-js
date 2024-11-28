@@ -1,0 +1,14 @@
+:root {
+  --primary: rgba(47, 244, 146, 1);
+  --secondary: rgba(138, 170, 241, 1);
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(34, 34, 34, 1);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --radius-s: 10px;
+  --radius-m: 20px;
+}

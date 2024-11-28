@@ -4,30 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/style.css" />
-  <script src="./js/main.js" type="module"></script>
-  <title>ToDoList</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="./main.js" type="module"></script>
+  <title>Web Component</title>
 </head>
 
 <body>
-  <section class="container">
-    <div class="heading">
-      <img class="heading__img" src="./assets/laptop.svg" alt="노트북">
-      <h1 class="heading__title">To-Do List</h1>
-    </div>
-    <form class="form">
-      <div>
-        <label class="form__label" for="todo">~ Today I need to ~</label>
-        <input class="form__input" type="text" id="todo" name="to-do" size="30" required>
-        <button class="button" type="submit"><span>Submit</span></button>
-      </div>
-    </form>
-    <div>
-      <ul class="toDoList">
-      </ul>
-    </div>
-  </section>
+  <div id="app">
+    <!-- <custom-card show-image="true" title="HELLO WORLD">
+      <span slot="description">
+        꿈과 책과 힘과 벽 사이를 눈치 보기에 바쁜 나날들
+      </span>
+    </custom-card>
+    <custom-card show-image="false" title="신기해유🦭">
+      <section slot="description">11/27일 첫눈 오는 날☃️</section>
+    </custom-card> -->
+
+    <!-- <custom-counter data-value="0"></custom-counter> -->
+    <custom-todo>hello</custom-todo>
+  </div>
 </body>
 
 </html>
