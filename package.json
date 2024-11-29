@@ -1,0 +1,19 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "🦭",
+  "license": "MIT",
+  "description": "Vite 툴체인을 사용한 개발 환경 메뉴얼 구성",
+  "dependencies": {
+    "kind-tiger": "^1.0.1",
+    "vite": "^6.0.1"
+  }
+}
