@@ -1,5 +1,5 @@
 {
-  "name": "core_js",
+  "name": "core-js",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,13 +8,13 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "lit": "^3.2.1"
+  },
   "devDependencies": {
-    "@eslint/js": "9.15.0",
-    "autoprefixer": "10.4.20",
-    "eslint": "9.15.0",
-    "globals": "15.12.0",
-    "postcss": "8.4.49",
-    "tailwindcss": "3.4.15",
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
     "vite": "^6.0.1"
   }
 }
