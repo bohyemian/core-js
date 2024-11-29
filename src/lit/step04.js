@@ -1,29 +1,58 @@
-import { LitElement, html } from 'lit';
 
-export class NameTag extends LitElement {
-  constructor() {
-    super();
-    this.name = '포로리';
-  }
+import { LitElement, html } from "lit";
+
+
+
+
+class NameTag extends LitElement {
 
   static properties = {
-    name: {},
-  };
+    name: {}
+  }
 
-  handleInput(e) {
+  constructor(){
+    super();
+
+    this.name = '너의 이름은 뭐니?'
+
+  }
+
+  handleInput(e){
     this.name = e.target.value;
   }
-  handleClick() {
-    alert(this.name);
+
+  handleClick(){
+    alert(this.name)
+  }
+  render(){
+
+    return html /* html */` 
+      <p> 안녕, ${this.name}</p>
+      <input @input=${this.handleInput} type="text" placeHolder="이름을 입력해주세요"/>
+      <button @click=${this.handleClick} type="button">click me</button>
+    `
   }
 
-  render() {
-    return html`
-      <p>안녕! ${this.name}</p>
-      <input type="text" @input=${this.handleInput} />
-      <button @click=${this.handleClick} type="button">click me</button>
-    `;
-  }
 }
 
-customElements.define('name-tag', NameTag);
+
+
+
+customElements.define('name-tag',NameTag);
+
+app.append(document.createElement('name-tag'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

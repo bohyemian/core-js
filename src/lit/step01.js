@@ -1,18 +1,48 @@
-import { LitElement, html } from 'lit';
 
-export class MyElement extends LitElement {
-  constructor() {
-    super();
-    this.version = '1.0.0';
-  }
+import { LitElement, html } from 'lit'
+
+
+
+class MyElement extends LitElement {
 
   static properties = {
-    version: {},
-  };
-
-  render() {
-    return html`<div>${this.version}</div>`;
+    version:{}
   }
+
+  constructor(){
+    super();
+    
+    this.version = '1.0.0'
+
+  }
+
+  render(){
+    return html `
+      <div>${this.version}</div>
+    `
+  }
+
+
+
+
 }
 
-customElements.define('my-element', MyElement);
+
+// @customElement('my-element')
+customElements.define('my-element',MyElement);
+
+app.append(document.createElement('my-element'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
