@@ -1,19 +1,20 @@
 {
-  "name": "core",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "core_js",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "🦭",
-  "license": "MIT",
-  "description": "Vite 툴체인을 사용한 개발 환경 메뉴얼 구성",
-  "dependencies": {
-    "kind-tiger": "^1.0.1",
+  "devDependencies": {
+    "@eslint/js": "9.15.0",
+    "autoprefixer": "10.4.20",
+    "eslint": "9.15.0",
+    "globals": "15.12.0",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.15",
     "vite": "^6.0.1"
   }
 }
