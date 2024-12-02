@@ -1,9 +1,28 @@
-const sum = (a: number, b: number) => a + b;
+
+
+const sum = (a,b) => a + b
 
 const a = 10;
 
-export function greet(person, date) {
+export function greet(person,date){
   console.log(`hello ${person} today is ${date}!`);
 }
 
-greet('tiger', 2);
+
+
+greet('tiger',2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
