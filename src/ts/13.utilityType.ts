@@ -64,10 +64,14 @@ type ShallowPartial<T> = {
   [K in keyof T]?: T[K];
 };
 
-const user6: ShallowPartial<User3> = {
+type DeepPartial<T> = {
+  [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K];
+};
+
+const user6: DeepPartial<User3> = {
   name: 'tiger',
   address: {
-    lat: 20,
-    long: 33.5,
+    // lat: 20,
+    // long: 33.5,
   },
 };
