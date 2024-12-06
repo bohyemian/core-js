@@ -80,61 +80,54 @@ class Register extends LitElement {
     `,
   ];
 
-  get idField() {
+  get idInput() {
     return this.renderRoot.querySelector<HTMLInputElement>('#idField')!;
   }
-
-  get pwField() {
+  get pwInput() {
     return this.renderRoot.querySelector<HTMLInputElement>('#pwField')!;
   }
 
   handleValidation(e: Event) {
     const target = e.currentTarget as HTMLInputElement;
+
     const stepKey = target.id === 'idField' ? 'step1' : 'step2';
-
-    console.log(stepKey);
-
     this.valid[stepKey] = target.value.length > 5;
 
-    if (target.value.length === 6) this.requestUpdate();
+    if (target.value.length > 5) this.requestUpdate();
   }
 
-  handleNext() {
+  handleStep1() {
     const wrapper = this.renderRoot.querySelector('.wrapper');
-    const line = this.renderRoot.querySelector('.line > div');
-
-    gsap.to(wrapper, { x: -460, ease: 'power2.inOut' });
-    gsap.to(line, { width: '70%' });
+    gsap.to(wrapper, { x: -460 });
   }
 
-  handleRegister() {
+  handleStep2() {
     pb.collection('users')
       .create({
-        email: this.idField.value,
-        password: this.pwField.value,
-        passwordConfirm: this.pwField.value,
+        email: this.idInput.value,
+        password: this.pwInput.value,
+        passwordConfirm: this.pwInput.value,
       })
       .then(() => {
-        Swal.fire({
-          text: '회원가입 완료! 로그인 페이지로 이동합니다!',
-        }).then(() => {
+        Swal.fire({ text: '회원가입 완료! 로그인 페이지로 이동합니다!' }).then(() => {
           location.href = '/src/pages/login/';
         });
       })
       .catch(() => {
-        Swal.fire({
-          text: '잘못된 정보를 입력하셨습니다.',
-        }).then(() => {
-          this.idField.value = '';
-          this.pwField.value = '';
-          gsap.to('.wrapper', { x: 0, ease: 'power2.inOut' });
-          // location.reload();
+        Swal.fire({ text: '잘못된 정보를 입력하셨습니다.' }).then(() => {
+          // this.valid.step1 = false;
+          // this.valid.step2 = false;
+          // this.requestUpdate();
+          // this.idInput.value = ''
+          // this.pwInput.value = ''
+          // const wrapper = this.renderRoot.querySelector('.wrapper');
+          // gsap.to(wrapper,{x:0})
+          location.reload();
         });
       });
   }
 
   render() {
-    console.log('first');
     return html`
       <div class="container">
         <h2>회원가입</h2>
@@ -148,8 +141,8 @@ class Register extends LitElement {
               아이디를 입력해주세요.
             </h3>
             <label for="idField"></label>
-            <input type="email" id="idField" @input=${this.handleValidation.bind(this)} placeholder="아이디(이메일)입력" />
-            <button disabled type="button" class="next-1" ?disabled=${!this.valid.step1} @click=${this.handleNext}>다음</button>
+            <input @input=${this.handleValidation} type="email" id="idField" placeholder="아이디(이메일)입력" />
+            <button @click=${this.handleStep1} ?disabled=${!this.valid.step1} type="button" class="next-1">다음</button>
           </div>
           <div class="step-2">
             <h3>
@@ -157,8 +150,8 @@ class Register extends LitElement {
               비밀번호를 입력해주세요.
             </h3>
             <label for="pwField"></label>
-            <input type="password" id="pwField" @input=${this.handleValidation.bind(this)} placeholder="비밀번호 입력" />
-            <button disabled type="button" class="next-2" ?disabled=${!this.valid.step2} @click=${this.handleRegister}>회원가입</button>
+            <input @input=${this.handleValidation} type="password" id="pwField" placeholder="비밀번호 입력" />
+            <button @click=${this.handleStep2} ?disabled=${!this.valid.step2} type="button" class="next-2">회원가입</button>
           </div>
         </div>
       </div>

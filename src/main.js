@@ -1,2 +1,2 @@
-// import './Layout/Header';
-import '/src/Layout/Header.ts'
+// import '/src/Layout/Header'
+import '/src/Layout/Header.ts';

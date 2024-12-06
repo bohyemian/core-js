@@ -1,8 +1,8 @@
 import { LitElement, html, css, CSSResultGroup } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { Product } from '../@types/type';
-import { getPbImageURL } from '../api/getPblmageURL';
-import resetCss from '../Layout/resetCSS';
+import { customElement, property, state } from 'lit/decorators.js';
+import resetCSS from '../Layout/resetCSS';
+import { Auth, Product } from '../@types/type';
+import { getPbImageURL } from '../api/getPbImageURL';
 import gsap from 'gsap';
 
 @customElement('product-list')
@@ -15,8 +15,10 @@ class ProductList extends LitElement {
     totalPages: 0,
   };
 
+  @state() loginData = {} as Auth;
+
   static styles: CSSResultGroup = [
-    resetCss,
+    resetCSS,
     css`
       .container {
         margin: 0 auto;
@@ -27,7 +29,7 @@ class ProductList extends LitElement {
 
         ul {
           display: grid;
-          place-item: center;
+          place-items: center;
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 2rem;
           margin: 2.5rem;
@@ -37,7 +39,6 @@ class ProductList extends LitElement {
               display: flex;
               flex-direction: column;
               gap: 0.6rem;
-              max-width: 30vw;
             }
           }
 
@@ -64,6 +65,17 @@ class ProductList extends LitElement {
           }
         }
       }
+
+      .new-post {
+        padding: 0.5rem 1rem;
+        background-color: dodgerblue;
+        color: white;
+        border-radius: 20px;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 2rem;
+      }
     `,
   ];
 
@@ -74,7 +86,9 @@ class ProductList extends LitElement {
 
   async fetchData() {
     const response = await fetch(`${import.meta.env.VITE_PB_API}/collections/products/records`);
-    this.data = await response.json();
+    const data = await response.json();
+    this.data = data;
+    this.loginData = JSON.parse(localStorage.getItem('auth') ?? '{}');
   }
 
   //attributeChangedCallback
@@ -94,27 +108,33 @@ class ProductList extends LitElement {
   }
 
   render() {
+    const { isAuth } = this.loginData;
+
     return html`
       <div class="container">
         <ul>
           ${this.data.items.map(
-            (item) =>
-              html`<li class="product-item">
-            <a href="/">
-            <figure>
-              <img src="${getPbImageURL(item)}" alt="">
-            </figure>${item.brand}</span>
-            <span class="description">${item.description}</span>
-            <span class="price">${item.price}원</span>
-            <div>
-              <span class="discount">${item.discount ? item.discount + '%' : ''}</span>
-              <span class="real-price">${item.discount ? (item.price * (1 - item.discount / 100)).toLocaleString() : item.price}원</span>
-            </div>
-          </a>
-        </li>`
+            (item) => html`
+              <li class="product-item">
+                <a href="${isAuth ? `/src/pages/detail/index.html?product=${item.id}` : `/`}">
+                  <figure>
+                    <img src="${getPbImageURL(item)}" alt="" />
+                  </figure>
+                  <span class="brand">${item.brand}</span>
+                  <span class="description">${item.description}</span>
+                  <span class="price">${item.price.toLocaleString()}원</span>
+                  <div>
+                    <span class="discount">${item.discount}%</span>
+                    <span class="real-price">${(item.price - item.price * item.discount * 0.01).toLocaleString()}원</span>
+                  </div>
+                </a>
+              </li>
+            `
           )}
         </ul>
       </div>
+
+      <a class="new-post" href="/src/pages/newPost/">+ 상품추가</a>
     `;
   }
 }

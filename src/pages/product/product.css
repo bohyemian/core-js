@@ -7,7 +7,7 @@
 
   ul {
     display: grid;
-    place-item: center;
+    place-items: center;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
     margin: 2.5rem;
@@ -16,14 +16,13 @@
       a {
         display: flex;
         flex-direction: column;
-        gap: .6rem;
-        max-width: 30vw;
+        gap: 0.6rem;
       }
     }
 
     .description {
       overflow: hidden;
-      font-size: .8rem;
+      font-size: 0.8rem;
       line-height: 1.2;
       white-space: nowrap;
       text-overflow: ellipsis;
