@@ -30,7 +30,7 @@ class ProductList extends LitElement {
         ul {
           display: grid;
           place-items: center;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
           gap: 2rem;
           margin: 2.5rem;
 
@@ -124,7 +124,7 @@ class ProductList extends LitElement {
                   <span class="description">${item.description}</span>
                   <span class="price">${item.price.toLocaleString()}원</span>
                   <div>
-                    <span class="discount">${item.discount}%</span>
+                    <span class="discount">${item.discount ? `${item.discount}%` : ''}</span>
                     <span class="real-price">${(item.price - item.price * item.discount * 0.01).toLocaleString()}원</span>
                   </div>
                 </a>
