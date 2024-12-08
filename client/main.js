@@ -1,4 +1,4 @@
-import { memo, attr, getNode, getNodes, endScroll, insertLast, clearContents, diceAnimation } from './lib/index.js';
+import { clearContents, diceAnimation, endScroll, getNode, getNodes, insertLast, memo } from './lib/index.js';
 
 const [rollingButton, recordButton, resetButton] = getNodes('.buttonGroup > button');
 const recordListWrapper = getNode('.recordListWrapper');
