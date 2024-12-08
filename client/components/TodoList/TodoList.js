@@ -33,10 +33,9 @@ export class TodoList extends HTMLElement {
 
     const data = JSON.parse(localStorage.getItem('todo'));
 
-    console.log(Array.isArray(data));
     data.forEach(({ id, value, checked }) => {
-      // const todoItem = new TodoItem(id, value, checked);
-      this.todo.append(new TodoItem(id, value, checked));
+      const todoItem = new TodoItem(id, value, checked);
+      this.todo.append(todoItem);
     });
   }
 

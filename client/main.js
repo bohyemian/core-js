@@ -1,9 +1,9 @@
 import { Button } from './components/Button/Button.js';
 import { Card } from './components/Card/Card.js';
 import { Counter } from './components/Counter/Counter.js';
-import { TodoList } from './components/TodoList/Todolist.js';
-import { getNode } from './lib/dom/getNode.js';
+import { TodoList } from './components/TodoList/TodoList.js';
 import { TodoItem } from './components/TodoItem/TodoItem.js';
+import { getNode } from './lib/dom/getNode.js';
 
 const app = getNode('#app');
 
